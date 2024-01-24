@@ -3,6 +3,8 @@ import {FaSearch} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 const Header = () => {
   return (
+    <>
+    
     <header className= ' bg-stone-800 shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'> 
         <Link to='/'>
@@ -26,6 +28,7 @@ const Header = () => {
          </ul>
       </div> 
     </header>
+    </>
   )
 }
 
