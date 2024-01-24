@@ -1,6 +1,7 @@
 import User from "../models/userModel.js";
 import bcryptjs from 'bcryptjs';// password hash krne ke liye bcryptjs install krnge
-export const signup=async (req,res)=>{
+import { errorHandler } from "../utils/error.js";
+export const signup=async (req,res,next)=>{
   console.log(req.body);
   const {username,email,password}=req.body;
   const hashedPassword=bcryptjs.hashSync(password,10);// so password is encrpted using bcryptjs function.
@@ -11,7 +12,8 @@ export const signup=async (req,res)=>{
     res.status(201).json("User  created successfully and data has been saved to our db");
 }
   catch(error){
-   res.status(500).json(error.message);
+   next(error);// here we call 'next' to use the middleware defined in index.js to handle the error and pass the error in it.
+
   }
   
 }

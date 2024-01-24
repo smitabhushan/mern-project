@@ -17,6 +17,17 @@ server.use(express.json());// this is going to allow json as input to our server
 server.listen(3000,()=>{
     console.log('server is running on port 3000');
 });
-     server.use('/api/user',userRouter);
-      // defining userRouter api route inside index.js
-      server.use('/api/auth' ,authRouter);
+server.use('/api/user',userRouter);// defining userRouter api route inside index.js
+ server.use('/api/auth' ,authRouter);
+
+ //creating middleware to handle error of api routes so that we cannot have to write try and catch each and everytime separately to handle error in api route.
+ server.use((err,req,res,next)=>{ //next parameter is used to go to next middleware
+  const statusCode=err.statusCode || 500;
+  const message=err.message || 'Internal Server Error';
+  return res.status(statusCode).json({
+    success:false,
+    statusCode,
+    message,
+  });
+ });
+ 
