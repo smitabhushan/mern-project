@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
     
-    <header className= ' bg-stone-800 shadow-md'>
+    <header className= ' bg-stone-700 shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'> 
         <Link to='/'>
          <h1 className='font-bold text-sm sm:text-2xl  flex flex-wrap'>
@@ -13,14 +13,14 @@ const Header = () => {
             <span className='text-white'>.com</span>
          </h1>
          </Link> 
-         <form className='bg-stone-700 p-3 rounded-xl flex items-center'>
-            <input type='text' placeholder='Search...' className='bg-transparent text-white focus:outline-none w-24 sm:w-64'/>
-             <FaSearch className='text-white'/>
+         <form className='bg-white p-3 rounded-full flex items-center'>
+            <input type='text' placeholder='Search...' className='bg-transparent text-black focus:outline-none w-24 sm:w-64'/>
+             <FaSearch className='text-stone-800'/>
          </form>
          <ul className='flex gap-4'>
-           <Link to='/home'><li className='text-stone-400 font-semibold hidden sm:inline hover:cursor-pointer'>Home</li></Link> 
-            <Link to='/about'><li className='text-stone-400 font-semibold hidden sm:inline hover:cursor-pointer'>About</li></Link>
-            <Link to='/sign-in'><li className='text-stone-400 font-semibold  hover:cursor-pointer'>
+           <Link to='/home'><li className='text-white font-semibold hidden sm:inline hover:cursor-pointer'>Home</li></Link> 
+            <Link to='/about'><li className='text-white font-semibold hidden sm:inline hover:cursor-pointer'>About</li></Link>
+            <Link to='/sign-in'><li className='text-white font-semibold  hover:cursor-pointer'>
              {" "}   
             Sign in
             </li>
