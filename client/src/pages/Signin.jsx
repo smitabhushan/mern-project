@@ -5,7 +5,7 @@ import { signInStart, signInFailure,signInSuccess } from '../redux/user/userSlic
 
 const Signin = () => {
   const [formData,setFormData]=useState({});
-  const {loading , error}=useSelector((state)=>state.user);
+ const {loading , error}=useSelector((state)=>state.user);
    const navigate= useNavigate() ;//initialsation
    const dispatch= useDispatch();
   const handleChange=(e)=>{
