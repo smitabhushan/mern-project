@@ -1,6 +1,6 @@
 // before performing update functionality for our data in our database .
 import jwt  from "jsonwebtoken";
-//import { errorHandler } from "./error";
+import { errorHandler } from "./error.js";
 
 // we need to first verify whether the user is authenticated to our website or not.
 export const verifyToken=(req,res,next)=>{
