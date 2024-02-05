@@ -35,7 +35,7 @@ export const signin=async(req,res,next)=>{
   const token= jwt.sign({id:validUser._id }, process.env.JWT_SECRET) // created the token
    const {password:pass , ...rest }=validUser._doc; // destructing the password as pass and all other data in rest
   // now we want to save this token as our Cookie.
-   res.cookie('User_token',token ,{httpOnly:true})
+   res.cookie('access_token',token ,{httpOnly:true})
    .status(200)
    .json({rest}) // now we have a cookie inside our browser
 
