@@ -24,11 +24,18 @@ const Header = () => {
             
             <Link to='/profile'>
              {currentUser ? (
-             <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt='profile'/>
+             <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt='profile' referrerpolicy="no-referrer" />
              )  :(
               <li className='text-white  hover:cursor-pointer'> Sign in</li>
              )}
-            </Link>
+             </Link>
+             {/*<Link to='/profile'>
+             {currentUser ? (
+            <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"} alt='profile' />
+           ) : (
+           <li className='text-white hover:cursor-pointer'>Sign in</li>
+  )}
+</Link>*/}
          </ul>
       </div> 
     </header>
