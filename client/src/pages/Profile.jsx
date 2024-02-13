@@ -150,7 +150,7 @@ const Profile = () => {
       <button  disabled={loading}className='bg-green-600 rounded-lg p-3 uppercase text-white hover:opacity-95 disabled:opacity-80'>
        {loading ? 'Loading...' : 'Update'}
         </button>
-        <Link  className='bg-slate-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95' to={'/create-listing'}>
+        <Link  className='bg-stone-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95' to={'/create-listing'}>
           Create Listing
         </Link>
     </form>
