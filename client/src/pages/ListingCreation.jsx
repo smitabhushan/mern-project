@@ -4,6 +4,7 @@ import {app} from '../Firebase';
 import {useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 
+
 const ListingCreation = () => {
   const {currentUser}=useSelector(state=>state.user);
   const [file,setFile]=useState([]);
@@ -189,7 +190,11 @@ const ListingCreation = () => {
               required  onChange={handleChange}  value={formData.regularPrice}/>
              <div className='flex flex-col items-center' > 
                <p>Regular price</p>
-               <span className='text-xs'>(Rs / month)</span>
+               {/*<span className='text-xs'>(Rs / month)</span>*/}
+               {formData.type==='rent' && (
+                <span className='text-xs'>(Rs / month)</span>
+               )}
+
               </div> 
             </div>
          {formData.offer && 
@@ -198,7 +203,9 @@ const ListingCreation = () => {
          required  onChange={handleChange}  value={formData.discountPrice}/>
          <div className='flex flex-col items-center'>  
           <p>Discounted price</p>
-          <span className='text-xs'>(Rs / month)</span>
+          {formData.type==='rent' && (
+            <span className='text-xs'>(Rs / month)</span>
+          )}
          </div>
        </div> 
        }
