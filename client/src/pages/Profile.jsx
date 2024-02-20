@@ -207,7 +207,7 @@ const Profile = () => {
             className='h-16 w-16 object-contain '/>
             </Link>
             <Link className='flex-1' to={`/listing/${listing._id}`}>
-              <p className='text-stone-700 font-semibold hover:underline truncate'>{listing.name}</p>
+              <p className='text-stone-700 font-semibold hover:underline w-full truncate'>{listing.name}</p>
             </Link>
             <div className='flex flex-col items-center '>
               <button onClick={()=>handleListingDelete(listing._id)}className='text-red-700 uppercase'>

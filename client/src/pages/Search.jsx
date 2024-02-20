@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import ListingItems from '../component/ListingItems';
 const Search = () => {
     const navigate=useNavigate();
     const[sidebarData,setSidebarData]=useState({
@@ -12,8 +13,9 @@ const Search = () => {
      sort:'created_at',
      order:'desc',
     });
-    const [loading,setLoading]=useState(false);
+    
     const[listings,setListings] =useState([]);
+    const[loading,setLoading] =useState(false);
     console.log(listings);
 
     useEffect(()=>{
@@ -49,8 +51,8 @@ const Search = () => {
        const fetchListings=async ()=>{
           setLoading(true);
           const searchQuery=urlParams.toString();
-          const res=await fetch(`/api/listing/get?${searchQuery}`)
-           const data=res.json();
+          const res=await fetch(`/api/listing/get?${searchQuery}`);
+           const data= await res.json();
            setListings(data);
            setLoading(false);
         };
@@ -59,7 +61,7 @@ const Search = () => {
     },[location.search]);
 
 
-   // console.log(sidebarData);
+    //console.log(sidebarData);
     const handleChange=(e)=>{
        if(e.target.id==='all' || e.target.id==='rent' || e.target.id==='sale'){
          setSidebarData({...sidebarData, type:e.target.id})
@@ -67,7 +69,7 @@ const Search = () => {
        if(e.target.id==='searchTerm'){
         setSidebarData({...sidebarData, searchTerm:e.target.value})
        }
-       if(e.target.id==='parking' || e.target.type==='furnished' || e.target.id==='offer'){
+       if(e.target.id==='parking' || e.target.id==='furnished' || e.target.id==='offer'){
         setSidebarData({...sidebarData, [e.target.id]: e.target.checked ||e.target.checked==='true' ?
         true : false
       });
@@ -170,8 +172,23 @@ const Search = () => {
       </form>
       </div>
       
-      <div className=''>
-       <h1 className='text-3xl font-semibold border-b p-3 text-stone-700 mt-5'>Listing Results:</h1>
+      <div className='flex-1'>
+       <h1 className='text-3xl font-semibold border-b p-3 text-stone-700 mt-5'>Listing Results:
+       </h1>
+       <div className='p-7 flex flex-wrap gap-4'>
+        {!loading && listings.length === 0 && (
+        <p className='text-xl text-stone-700'>No listing found!</p>
+         )}
+         {loading && (
+            <p className='text-xl text-stone-700 text-center w-full'>Loading....</p>
+         )}
+         {
+           !loading && listings && listings.map((listing)=>(
+            <ListingItems key={listing._id} listing={listing}/>
+           ))
+
+         }
+       </div>
       </div>
     </div>
   )
