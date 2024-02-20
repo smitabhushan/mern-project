@@ -8,7 +8,7 @@ const Header = () => {
   const {currentUser}=useSelector(state=>state.user)
 const handleSubmit=(e)=>{
   e.preventDefault();
-  const urlParams=new URLSearchParams(window.location.search); //using  javascript constructor (URLSearchParams)
+  const urlParams=new URLSearchParams(window.location.search); //using buildin javascript constructor (URLSearchParams)
    urlParams.set('searchTerm' ,searchTerm);
    const searchQuery=urlParams.toString();
    navigate(`/search?${searchQuery}`);
