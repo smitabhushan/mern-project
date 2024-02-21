@@ -21,6 +21,7 @@ server.use(cookieParser());// now we can get the information from cookie.
 server.listen(3000,()=>{
     console.log('server is running on port 3000');
 });
+
 server.use('/api/user',userRouter);// defining userRouter api route inside index.js
 server.use('/api/auth' ,authRouter);
 server.use('/api/listing' , listingRouter);
