@@ -42,7 +42,7 @@ useEffect(()=>{
             
          </form>
          <ul className='flex gap-4'>
-           <Link to='/home'><li className='text-white  hidden sm:inline hover:cursor-pointer'>Home</li></Link> 
+           <Link to='/'><li className='text-white  hidden sm:inline hover:cursor-pointer'>Home</li></Link> 
             <Link to='/about'><li className='text-white  hidden sm:inline hover:cursor-pointer'>About</li></Link>
             
             <Link to='/profile'>
