@@ -63,7 +63,7 @@ const Home = () => {
           We have a wide range of properties for you to 
           choose from.
         </div>
-        <Link to={'/search'} className='text-xs sm:text-sm text-orange-700 font-bold hover:underline'>
+        <Link to={'/search'} className='text-xs sm:text-sm text-orange-600 font-bold hover:underline'>
           Explore All properties.....
         </Link>
       </div>
@@ -84,8 +84,8 @@ const Home = () => {
          {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-stone-700'>Recent offers</h2>
-              <Link className='text-sm text-orange-600 hover:underline' to={'/search?offer=true'}>
+              <h2 className='text-2xl font-semibold text-slate-700'>Recent offers</h2>
+              <Link className='text-sm text-blue-600 hover:underline' to={'/search?offer=true'}>
                  Show more offers
               </Link>
             </div>
@@ -99,8 +99,8 @@ const Home = () => {
          {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-stone-700'>Recent places for rent</h2>
-              <Link className='text-sm text-orange-600 hover:underline' to={'/search?type=rent'}>
+              <h2 className='text-2xl font-semibold text-slate-700'>Recent places for rent</h2>
+              <Link className='text-sm text-blue-600 hover:underline' to={'/search?type=rent'}>
                  Show more places for rent
               </Link>
             </div>
@@ -114,8 +114,8 @@ const Home = () => {
          {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-stone-700'>Recent places for sale</h2>
-              <Link className='text-sm text-orange-600 hover:underline' to={'/search?type=sale'}>
+              <h2 className='text-2xl font-semibold text-slate-700'>Recent places for sale</h2>
+              <Link className='text-sm text-blue-600 hover:underline' to={'/search?type=sale'}>
                  Show more places for sale
               </Link>
             </div>
