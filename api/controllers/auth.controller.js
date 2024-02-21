@@ -37,7 +37,7 @@ export const signin=async(req,res,next)=>{
   // now we want to save this token as our Cookie.
    res.cookie('access_token',token ,{httpOnly:true})
    .status(200)
-   .json({rest}) // now we have a cookie inside our browser
+   .json(rest) // now we have a cookie inside our browser
 
   }
   catch(error){
